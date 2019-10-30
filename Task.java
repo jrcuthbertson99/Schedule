@@ -47,6 +47,6 @@ class {
     return project;
   }
   public boolean getCompletion(){
-    retuen complete
+    retuen complete;
   }
 }
