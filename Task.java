@@ -6,11 +6,13 @@ class {
   private LocalDateTime created;
   private LocalDateTime lastUpdate;
   private Project project;
-  public Task(String name_1, LocalDate dueDate_1, String description_1){
+  private boolean complete; 
+  public Task(String name_1, LocalDate dueDate_1, String description_1, Project project){
     this.name = name_1;
     this.dueDate = dueDate_1;
     this.description = description_1;
     this.project = project
+    this.complete = false;
   }
   public void setDueDate(LocalDate newDueDate){
     dueDate = newDueDate;
@@ -36,5 +38,15 @@ class {
   public String getDescription(){
     return description;
   }
-
+  public void markAsCompleted(){
+    complete = true;
+    lastUpdate = now();
+    project.lastUpdate=now();
+  } 
+  public Project getProject(){
+    return project;
+  }
+  public boolean getCompletion(){
+    retuen complete
+  }
 }
