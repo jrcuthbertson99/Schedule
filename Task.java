@@ -46,6 +46,9 @@ class {
   public Project getProject(){
     return project;
   }
+  public void setCompletion(boolean completion){
+    complete = completion;
+  }
   public boolean getCompletion(){
     retuen complete;
   }
