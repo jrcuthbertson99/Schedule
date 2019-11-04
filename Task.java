@@ -1,5 +1,8 @@
-import java.time;
-class {
+import java.time.LocalDate;  
+import java.util.ArrayList;
+import java.time.Month;
+import java.time.LocalDateTime;
+class Task {
   private String name;
   private LocalDate dueDate;
   private String description;
@@ -11,37 +14,41 @@ class {
     this.name = name_1;
     this.dueDate = dueDate_1;
     this.description = description_1;
-    this.project = project
+    this.project = project;
     this.complete = false;
+    //initialize created
+    this.created  = LocalDateTime.now();
+  }
+  //add subtasks array? 
+  public Task() {
+    this.created = LocalDateTime.now();
   }
   public void setDueDate(LocalDate newDueDate){
     dueDate = newDueDate;
-    lastUpdate = now();
-    project.lastUpdate=now(); 
+    lastUpdate = LocalDateTime.now();
   }
   public LocalDate getDueDate(){
     return dueDate;
   }
   public void setName(String newName){
     name = newName;
-    lastUpdate = now();
-    project.lastUpdate=now(); 
+    lastUpdate = LocalDateTime.now();
   }
   public String getName(){
     return name;
   }
   public void setDescription(String newDescription){
     description = newDescription;
-    lastUpdate = now();
-    project.lastUpdate=now(); 
+    lastUpdate = LocalDateTime.now();
+    project.lastUpdate=LocalDateTime.now(); 
   }
   public String getDescription(){
     return description;
   }
   public void markAsCompleted(){
     complete = true;
-    lastUpdate = now();
-    project.lastUpdate=now();
+    lastUpdate = LocalDateTime.now();
+    project.lastUpdate=LocalDateTime.now();
   } 
   public Project getProject(){
     return project;
@@ -50,6 +57,6 @@ class {
     complete = completion;
   }
   public boolean getCompletion(){
-    retuen complete;
+    return complete;
   }
 }

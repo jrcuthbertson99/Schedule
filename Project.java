@@ -1,50 +1,55 @@
-import java.time;
-import java.util;
-import java.time;
-class {
+import java.time.LocalDate;  
+import java.util.ArrayList;
+import java.time.Month;
+import java.time.LocalDateTime;
+class Project  {
   private String name;
   private LocalDate dueDate;
   private String description;
   private LocalDateTime created;
   public LocalDateTime lastUpdate;
-  private ArrayList<Task> steps;
+  private ArrayList<Task> steps = new ArrayList<Task>();
   public Project(String name_1, LocalDate dueDate_1, String description_1){
     this.name = name_1;
     this.dueDate = dueDate_1;
     this.description = description_1;
-    this.steps = steps;
+    created  = LocalDateTime.now();
   }
+  public Project() {
+    this.created = LocalDateTime.now();
+  }
+  //public LocalDateTime getCreated() 
   public void setDueDate(LocalDate newDueDate){
     dueDate = newDueDate;
-    lastUpdate = now();
+    lastUpdate = LocalDateTime.now();
   }
   public LocalDate getDueDate(){
     return dueDate;
   }
   public void setName(String newName){
     name = newName;
-    lastUpdate = now();
+    lastUpdate = LocalDateTime.now();
   }
   public String getName(){
     return name;
   }
   public void setDescription(String newDescription){
     description = newDescription;
-    lastUpdate = now();
+    lastUpdate = LocalDateTime.now();
   }
   public String getDescription(){
     return description;
   }
-  public addTask(String newTaskName, LocalDate newTaskDeadline, String newDescription)
-    Task task = new Task(newTaskName, newTaskDeadline, newDescription)
+  public void addTask(Task task){
     steps.add(task);
   }
-  public dropTask (Task task){
+  public void dropTask(Task task){
     steps.remove(task);
   }
-  public dropCompleted(ArrayList<Task> steps){
-    for(i=0;i< steps.size();i++){
-      if (steps[i].getCompletion()=true){
+  //needs a getTask(taskname) to print?
+  public void dropCompleted(ArrayList<Task> steps){
+    for(int i=0;i< steps.size();i++){
+      if (steps.get(i).getCompletion()==true){
         steps.remove(i);
       }
     }
