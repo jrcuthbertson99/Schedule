@@ -35,10 +35,11 @@ class {
   public String getDescription(){
     return description;
   }
-  public addTask(Task task){
+  public addTask(String newTaskName, LocalDate newTaskDeadline, String newDescription)
+    Task task = new Task(newTaskName, newTaskDeadline, newDescription)
     steps.add(task);
   }
-  public dropTask(Task task){
+  public dropTask (Task task){
     steps.remove(task);
   }
   public dropCompleted(ArrayList<Task> steps){
