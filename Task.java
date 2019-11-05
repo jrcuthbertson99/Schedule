@@ -63,4 +63,8 @@ class Task {
     String writtenForm=name+"\n"+dueDate.toString()+"\n"+description;
     return writtenForm;
   }
+  public String toStringMeta(){
+    String writtenForm=name+"\n"+dueDate.toString()+"\n"+description+"\n"+created.toString()+"\n"+lastUpdated.toString();
+    return writtenForm;
+  }
 }
