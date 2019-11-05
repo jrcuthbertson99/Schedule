@@ -5,7 +5,8 @@ import java.time.LocalDateTime;
 
 public class SchedableTests {
    public static void main(String[] args) {
-
+     Main.createNewAccount("firstGuy","TestRun");
+     Main.logIn("firstGuy", "TestRun");
     Project project= new Project("Project",LocalDate.of(2019, Month.NOVEMBER, 3) ,"Test");
 
    project.setDueDate(LocalDate.of(2019, Month.NOVEMBER, 4));
@@ -40,5 +41,6 @@ public class SchedableTests {
    //System.out.printf("Task: \nDue: %s\nDescripiton: %s\n",first.getName(),first.getDueDate().toString(),first.getDescription());
    System.out.printf(project.toString());
    System.out.printf(project.toStringMeta());
+   Main.logOut();
    }
 }
