@@ -59,4 +59,8 @@ class Task {
   public boolean getCompletion(){
     return complete;
   }
+  public String toString(){
+    String writtenForm=name+"\n"+dueDate.toString()+"\n"+description;
+    return writtenForm;
+  }
 }
