@@ -1,22 +1,24 @@
 import java.util.ArrayList;
+import java.io.*;
+import java.util.*;
 class Main{
   ArrayList<Project> myProjects;
-  private ArrayList<String[2]> loginInfo
+  private ArrayList<String[]> loginInfo;
   private String username;
   private String password;
   public Main(){
-    this.myProjects = myProjects;
-    this.loginInfo = loginInfo;
-    this.username=username;
+    this.myProjects = new ArrayList<Project>();
+    this.loginInfo = new ArrayList<String[]>();
+    this.username = username;
     this.password = password;
   }
   void createNewAccount(String userName, String password){
-    for(i=0; i<loginInfo.size();i++){
-      if(username.equalTo(loginInfo.get(i)[0])){
+    for(int i=0; i<loginInfo.size();i++){
+      if(username.equals(loginInfo.get(i)[0])){
         System.out.print("Sorry, that username has been taken");
         return;
       }
-      if(password.equalTo(loginInfo.get(i)[1])){
+      if(password.equals(loginInfo.get(i)[1])){
         System.out.print("Sorry, that password has been taken");
         return;
       }
@@ -25,23 +27,26 @@ class Main{
     loginInfo.add(newLoginInfo);
   }
   void login(String userName, String password){
-    for(i=0; i<loginInfo.size();i++){
-      if(userName.equalTo(loginInfo.get(i)[0]) && password.equalTo(loginInfo.get(i)[1]){
+    for(int i=0; i<loginInfo.size();i++){
+      if(userName.equals(loginInfo.get(i)[0]) && password.equals(loginInfo.get(i)[1])){
         username =userName;
         loadProjects(username);
         return;
       }
-  }
-  void loadProjects(String username){
-  //have the projects load from a text file into myProjects to be displayed with all the relevant information
-  }
+   }
+ }
+ void loadProjects(String user){
+   return;
+ }
   void logout(){
-    throws IOException{
+    try{
       BufferedWriter writer = new BufferedWriter(new FileWriter(username));
-     for(i=0; i<myProjects.size();i++){
+     for(int i=0; i<myProjects.size();i++){
       writer.write(myProjects.get(i).toStringMeta());
-     }
     }
-    System.exit;
+  }catch(IOException e){
+      System.out.print("Error:"+ e);
+    }
+    System.exit(0);
   }
 }
