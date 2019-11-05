@@ -36,8 +36,8 @@ public class SchedableTests {
       System.out.print("Wym? We're done here.");
    }
 
-   System.out.printf("Project: %s\nDue: %s\nDescription: %s\n\n",project.getName(),project.getDueDate().toString(),project.getDescription());
-   System.out.printf("Task: \nDue: %s\nDescripiton: %s\n",first.getName(),first.getDueDate().toString(),first.getDescription());
+   //System.out.printf("Project: %s\nDue: %s\nDescription: %s\n\n",project.getName(),project.getDueDate().toString(),project.getDescription());
+   //System.out.printf("Task: \nDue: %s\nDescripiton: %s\n",first.getName(),first.getDueDate().toString(),first.getDescription());
    System.out.printf(project.toString()+"\n"+first.toString()+"\n"+second.toString());
    }
 }
