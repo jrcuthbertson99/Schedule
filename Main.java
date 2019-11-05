@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 class Main{
   ArrayList<Project> myProjects;
   public Main(){
@@ -10,6 +11,6 @@ class Main{
     createNewAccount(username,password);
   }
   void loadProjects(){
-  //have the projects load from a text file into myProjects to be displayed with all the relevant information  
+  //have the projects load from a text file into myProjects to be displayed with all the relevant information
   }
 }
