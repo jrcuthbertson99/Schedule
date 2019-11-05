@@ -24,10 +24,17 @@ public class SchedableTests {
    
    
    project.addTask(first);
+   if (project.steps[0].completion==true){
+      System.out.print("Not yet! We need to finish!");
+   }
    project.addTask(second);
    //need to way to set completion of tasks from project?
    //some sort of printinfo
-   
+   project.steps[1].completion=true;
+   project.addTask(first);
+   if (project.steps[0].completion==false){
+      System.out.print("Wym? We're done here.");
+   }
    
    System.out.printf("Project: %s\nDue: %s\nDescription: %s\n\n",project.getName(),project.getDueDate().toString(),project.getDescription());
    System.out.printf("Task: \nDue: %s\nDescripiton: %s\n",first.getName(),first.getDueDate().toString(),first.getDescription());
