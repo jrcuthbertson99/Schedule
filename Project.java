@@ -1,4 +1,4 @@
-import java.time.LocalDate;  
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.time.Month;
 import java.time.LocalDateTime;
@@ -8,7 +8,7 @@ class Project  {
   private String description;
   private LocalDateTime created;
   public LocalDateTime lastUpdate;
-  private ArrayList<Task> steps = new ArrayList<Task>();
+  public ArrayList<Task> steps = new ArrayList<Task>();
   public Project(String name_1, LocalDate dueDate_1, String description_1){
     this.name = name_1;
     this.dueDate = dueDate_1;
@@ -18,7 +18,7 @@ class Project  {
   public Project() {
     this.created = LocalDateTime.now();
   }
-  //public LocalDateTime getCreated() 
+  //public LocalDateTime getCreated()
   public void setDueDate(LocalDate newDueDate){
     dueDate = newDueDate;
     lastUpdate = LocalDateTime.now();
