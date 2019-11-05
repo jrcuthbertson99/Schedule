@@ -54,4 +54,8 @@ class Project  {
       }
     }
   }
+  public String toString(){
+    String writtenForm=name+"\n"+dueDate.toString()+"\n"+description;
+    return writtenForm;
+  }
 }
