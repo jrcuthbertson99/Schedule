@@ -60,7 +60,7 @@ class Project  {
     return writtenForm;
   }
    public String toStringMeta(){
-    String writtenForm=name+"\n"+dueDate.toString()+"\n"+description+"\n"+created.toString()+lastUpdated.toString();
+    String writtenForm=name+"\n"+dueDate.toString()+"\n"+description+"\n"+created.toString()+"\n"+lastUpdated.toString();
     return writtenForm;
   }
 }
