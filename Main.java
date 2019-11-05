@@ -31,6 +31,12 @@ class Main{
   //have the projects load from a text file into myProjects to be displayed with all the relevant information
   }
   void logout(){
-  
+    throws IOException{
+      BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
+     for(i=0; i<myProjects.size();i++){
+      writer.write(myProjects.get(i).toStringMeta);
+     }
+    }
+    System.exit;
   }
 }
