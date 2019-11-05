@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.io.*;
 import java.util.*;
 class Main{
-  ArrayList<Project> myProjects;
-  private ArrayList<String[]> loginInfo;
+  ArrayList<Project> myProjects;//List of projects the user has
+  private ArrayList<String[]> loginInfo;//List of usernames and passwords
   private String username;
   private String password;
   public Main(){
@@ -12,7 +12,7 @@ class Main{
     this.username = username;
     this.password = password;
   }
-  void createNewAccount(String userName, String password){
+  void createNewAccount(String userName, String password){//Creates new account
     for(int i=0; i<loginInfo.size();i++){
       if(username.equals(loginInfo.get(i)[0])){
         System.out.print("Sorry, that username has been taken");
@@ -26,7 +26,7 @@ class Main{
     String[] newLoginInfo = {username,password};
     loginInfo.add(newLoginInfo);
   }
-  void login(String userName, String password){
+  void login(String userName, String password){//Logs user in
     for(int i=0; i<loginInfo.size();i++){
       if(userName.equals(loginInfo.get(i)[0]) && password.equals(loginInfo.get(i)[1])){
         username =userName;
@@ -35,10 +35,10 @@ class Main{
       }
    }
  }
- void loadProjects(String user){
+ void loadProjects(String user){//Loads tasks from file
    return;
  }
-  void logout(){
+  void logout(){//Writes tasks to file and exits program
     try{
       BufferedWriter writer = new BufferedWriter(new FileWriter(username));
      for(int i=0; i<myProjects.size();i++){
