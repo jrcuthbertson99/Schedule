@@ -57,10 +57,20 @@ class Project  {
   }
   public String toString(){
     String writtenForm=name+"\n"+dueDate.toString()+"\n"+description;
+    String writtenTasks="";
+    for(i=0; i=steps.size();i++){
+      writtenTasks+=steps.get(i).toStringMeta()+"\n";
+    }
+    writtenForm+="\n"+writtenTasks;
     return writtenForm;
   }
    public String toStringMeta(){
     String writtenForm=name+"\n"+dueDate.toString()+"\n"+description+"\n"+created.toString()+"\n"+lastUpdated.toString();
+    String writtenTasks="";
+    for(i=0; i=steps.size();i++){
+      writtenTasks+=steps.get(i).toStringMeta()+"\n";
+    }
+    writtenForm+="\n"+writtenTasks;
     return writtenForm;
   }
 }
