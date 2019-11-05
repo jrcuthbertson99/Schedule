@@ -2,11 +2,15 @@ import java.util.ArrayList;
 class Main{
   ArrayList<Project> myProjects;
   private ArrayList<String[2]> loginInfo
+  private String username;
+  private String password;
   public Main(){
     this.myProjects = myProjects;
     this.loginInfo = loginInfo;
+    this.username=username;
+    this.password = password;
   }
-  void createNewAccount(String username, String password){
+  void createNewAccount(String userName, String password){
     for(i=0; i<loginInfo.size();i++){
       if(username.equalTo(loginInfo.get(i)[0])){
         System.out.print("Sorry, that username has been taken");
@@ -20,9 +24,10 @@ class Main{
     String[] newLoginInfo = {username,password};
     loginInfo.add(newLoginInfo);
   }
-  void login(String username, String password){
+  void login(String userName, String password){
     for(i=0; i<loginInfo.size();i++){
-      if(username.equalTo(loginInfo.get(i)[0]) && password.equalTo(loginInfo.get(i)[1]){
+      if(userName.equalTo(loginInfo.get(i)[0]) && password.equalTo(loginInfo.get(i)[1]){
+        username =userName;
         loadProjects(username);
         return;
       }
@@ -32,7 +37,7 @@ class Main{
   }
   void logout(){
     throws IOException{
-      BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
+      BufferedWriter writer = new BufferedWriter(new FileWriter(username));
      for(i=0; i<myProjects.size();i++){
       writer.write(myProjects.get(i).toStringMeta());
      }
