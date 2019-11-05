@@ -24,6 +24,7 @@ public class SchedableTests {
 
 
    project.addTask(first);
+   //completion tests
    if (project.steps.get(0).getCompletion()==true){
       System.out.print("Not yet! We need to finish!");
    }
