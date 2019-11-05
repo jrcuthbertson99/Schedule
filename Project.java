@@ -65,7 +65,7 @@ class Project  {
     return writtenForm;
   }
    public String toStringMeta(){
-    String writtenForm=name+"\n"+dueDate.toString()+"\n"+description+"\n"+created.toString()+"\n"+lastUpdated.toString();
+    String writtenForm="Project:"name+"\n Due:"dueDate.toString()+"\n Description"+description+"\n Created:"+created.toString()+"\n Updated"+lastUpdated.toString();
     String writtenTasks="";
     for(i=0; i=steps.size();i++){
       writtenTasks+=steps.get(i).toStringMeta()+"\n";
