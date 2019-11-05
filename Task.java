@@ -1,4 +1,4 @@
-import java.time.LocalDate;  
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.time.Month;
 import java.time.LocalDateTime;
@@ -9,7 +9,7 @@ class Task {
   private LocalDateTime created;
   private LocalDateTime lastUpdate;
   private Project project;
-  private boolean complete; 
+  private boolean complete;
   public Task(String name_1, LocalDate dueDate_1, String description_1, Project project){
     this.name = name_1;
     this.dueDate = dueDate_1;
@@ -19,7 +19,7 @@ class Task {
     //initialize created
     this.created  = LocalDateTime.now();
   }
-  //add subtasks array? 
+  //add subtasks array?
   public Task() {
     this.created = LocalDateTime.now();
   }
@@ -40,7 +40,7 @@ class Task {
   public void setDescription(String newDescription){
     description = newDescription;
     lastUpdate = LocalDateTime.now();
-    project.lastUpdate=LocalDateTime.now(); 
+    project.lastUpdate=LocalDateTime.now();
   }
   public String getDescription(){
     return description;
@@ -49,7 +49,7 @@ class Task {
     complete = true;
     lastUpdate = LocalDateTime.now();
     project.lastUpdate=LocalDateTime.now();
-  } 
+  }
   public Project getProject(){
     return project;
   }
@@ -64,7 +64,7 @@ class Task {
     return writtenForm;
   }
   public String toStringMeta(){
-    String writtenForm="Task:"+name+"\n Due:"+dueDate.toString()+"\n Description:"+description+"\n Created:"+created.toString()+"\n Updated:"+lastUpdated.toString();
+    String writtenForm="Task:"+name+"\n Due:"+dueDate.toString()+"\n Description:"+description+"\n Created:"+created.toString()+"\n Updated:"+lastUpdate.toString();
     return writtenForm;
   }
 }
