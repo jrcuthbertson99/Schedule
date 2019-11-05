@@ -34,7 +34,7 @@ class Main{
     throws IOException{
       BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
      for(i=0; i<myProjects.size();i++){
-      writer.write(myProjects.get(i).toStringMeta);
+      writer.write(myProjects.get(i).toStringMeta());
      }
     }
     System.exit;
