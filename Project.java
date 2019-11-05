@@ -14,6 +14,7 @@ class Project  {
     this.dueDate = dueDate_1;
     this.description = description_1;
     created  = LocalDateTime.now();
+    lastUpdate = LocalDateTime.now();
   }
   public Project() {
     this.created = LocalDateTime.now();
@@ -56,6 +57,10 @@ class Project  {
   }
   public String toString(){
     String writtenForm=name+"\n"+dueDate.toString()+"\n"+description;
+    return writtenForm;
+  }
+   public String toStringMeta(){
+    String writtenForm=name+"\n"+dueDate.toString()+"\n"+description+"\n"+created.toString()+lastUpdated.toString();
     return writtenForm;
   }
 }
