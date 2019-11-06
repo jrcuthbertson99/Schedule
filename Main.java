@@ -24,7 +24,6 @@ class Main{
       }
     }
     String[] newLoginInfo = {userName,password};
-    System.out.print(userName);
     loginInfo.add(newLoginInfo);
   }
   void login(String userName, String password){
