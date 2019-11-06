@@ -11,6 +11,21 @@ class Main{
     this.loginInfo = new ArrayList<String[]>();
     this.username = username;
     this.password = password;
+    try{
+      File file = new File(System.getProperty("user.dir")+File.separator+"loginInfo");
+      file.createNewFile();
+      Scanner li = new Scanner(file);
+      int i=0;
+      while(li.hasNext()){
+        String[] currentLogin = new String[2];
+        currentLogin[0]=li.next();
+        currentLogin[1]=li.next();
+        i++;
+      }
+      li.close();
+    }catch(IOException e){
+        System.out.print("Error:"+ e);
+      }
   }
   void createNewAccount(String userName, String password){
     for(int i=0; i<loginInfo.size();i++){
