@@ -25,6 +25,14 @@ class Main{
     }
     String[] newLoginInfo = {userName,password};
     loginInfo.add(newLoginInfo);
+    try{
+      File file = new File(System.getProperty("user.dir")+"loginInfo");
+      BufferedWriter writer = new BufferedWriter(new FileWriter(System.getProperty("user.dir")+File.separator+"loginInfo", true));
+      writer.write(newLoginInfo[0]+" "+newLoginInfo[1]+"\n");
+      writer.close();
+    }catch(IOException e){
+        System.out.print("Error:"+ e);
+      }
   }
   void login(String userName, String password){
     for(int i=0; i<loginInfo.size();i++){
