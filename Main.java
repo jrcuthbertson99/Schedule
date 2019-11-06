@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.io.*;
 import java.util.*;
 class Main{
-  ArrayList<Project> myProjects;//List of projects the user has
-  private ArrayList<String[]> loginInfo;//List of usernames and passwords
+  ArrayList<Project> myProjects;
+  private ArrayList<String[]> loginInfo;
   private String username;
   private String password;
   public Main(){
@@ -12,7 +12,7 @@ class Main{
     this.username = username;
     this.password = password;
   }
-  void createNewAccount(String userName, String password){//Creates new account
+  void createNewAccount(String userName, String password){
     for(int i=0; i<loginInfo.size();i++){
       if(username.equals(loginInfo.get(i)[0])){
         System.out.print("Sorry, that username has been taken");
@@ -26,7 +26,7 @@ class Main{
     String[] newLoginInfo = {username,password};
     loginInfo.add(newLoginInfo);
   }
-  void login(String userName, String password){//Logs user in
+  void login(String userName, String password){
     for(int i=0; i<loginInfo.size();i++){
       if(userName.equals(loginInfo.get(i)[0]) && password.equals(loginInfo.get(i)[1])){
         username =userName;
@@ -35,12 +35,13 @@ class Main{
       }
    }
  }
- void loadProjects(String user){//Loads tasks from file
+ void loadProjects(String user){
    return;
  }
-  void logout(){//Writes tasks to file and exits program
+  void logout(){
     try{
-      BufferedWriter writer = new BufferedWriter(new FileWriter(username));
+      File file =new File(System.getProperty("user.home")+File.separator+username);
+      BufferedWriter writer = new BufferedWriter(new FileWriter(file));
      for(int i=0; i<myProjects.size();i++){
       writer.write(myProjects.get(i).toStringMeta());
     }
