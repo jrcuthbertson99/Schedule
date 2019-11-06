@@ -13,8 +13,8 @@ class Project  {
     this.name = name_1;
     this.dueDate = dueDate_1;
     this.description = description_1;
-    created  = LocalDateTime.now();
-    lastUpdate = LocalDateTime.now();
+    this.created  = LocalDateTime.now();
+    this.lastUpdate = LocalDateTime.now();
   }
   public Project() {
     this.created = LocalDateTime.now();
@@ -43,6 +43,7 @@ class Project  {
   }
   public void addTask(Task task){
     steps.add(task);
+    task.setProject(this);
   }
   public void dropTask(Task task){
     steps.remove(task);

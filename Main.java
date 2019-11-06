@@ -23,7 +23,8 @@ class Main{
         return;
       }
     }
-    String[] newLoginInfo = {username,password};
+    String[] newLoginInfo = {userName,password};
+    System.out.print(userName);
     loginInfo.add(newLoginInfo);
   }
   void login(String userName, String password){
@@ -38,13 +39,24 @@ class Main{
  void loadProjects(String user){
    return;
  }
+ void assign(String user, Task task){
+   Project assignedP=new Project(task.getProject().getName(),task.getProject().getDueDate(),task.getProject().getDescription());
+   try{
+     BufferedWriter writer = new BufferedWriter(new FileWriter(System.getProperty("user.dir")+File.separator+user));
+     writer.write(assignedP.toStringMeta());
+     writer.close();
+   }catch(IOException e){
+       System.out.print("Error:"+ e);
+     }
+ }
   void logout(){
     try{
-      File file =new File(System.getProperty("user.home")+File.separator+username);
+      File file =new File(System.getProperty("user.dir")+File.separator+username);
       BufferedWriter writer = new BufferedWriter(new FileWriter(file));
      for(int i=0; i<myProjects.size();i++){
       writer.write(myProjects.get(i).toStringMeta());
     }
+    writer.close();
   }catch(IOException e){
       System.out.print("Error:"+ e);
     }

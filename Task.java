@@ -14,9 +14,8 @@ class Task {
     this.name = name_1;
     this.dueDate = dueDate_1;
     this.description = description_1;
-    this.project = project;
     this.complete = false;
-    //initialize created
+    this.project = project;
     this.created  = LocalDateTime.now();
   }
   //add subtasks array?
@@ -49,6 +48,9 @@ class Task {
     complete = true;
     lastUpdate = LocalDateTime.now();
     project.lastUpdate=LocalDateTime.now();
+  }
+  public void setProject(Project supertask){
+    project = supertask;
   }
   public Project getProject(){
     return project;
