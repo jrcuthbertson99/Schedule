@@ -9,17 +9,17 @@ public class SchedableTests {
      firstRun.createNewAccount("firstGuy","TestRun");
      firstRun.login("firstGuy", "TestRun");
     Project project= new Project("Project",LocalDate.of(2019, Month.NOVEMBER, 3) ,"Test");
-
+    firstRun.myProjects.add(project);
    project.setDueDate(LocalDate.of(2019, Month.NOVEMBER, 4));
    project.setName("ProjectTest");
    project.setDescription("Testing for project");
 
-   Task first = new Task("First Task",LocalDate.of(2019, Month.NOVEMBER, 3),"task description",project );
+   Task first = new Task("First Task",LocalDate.of(2019, Month.NOVEMBER, 3),"task description", project);
    first.setDueDate(LocalDate.of(2019, Month.NOVEMBER, 4));
    first.setName("Task1Test");
    first.setDescription("Testing for tasks");
 
-   Task second = new Task("Second Task",LocalDate.of(2019, Month.NOVEMBER, 3),"task description",project );
+   Task second = new Task("Second Task",LocalDate.of(2019, Month.NOVEMBER, 3),"task description",project);
    second.setDueDate(LocalDate.of(2019, Month.NOVEMBER, 4));
    second.setName("Task2Test");
    second.setDescription("Testing for tasks again");
