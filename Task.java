@@ -61,12 +61,18 @@ class Task {
   public boolean getCompletion(){
     return complete;
   }
+  public void setCreated(LocalDateTime createdDate){
+    created = createdDate;
+  }
+  public void setLastUpdate(LocalDateTime updated){
+    lastUpdate=updated;
+  }
   public String toString(){
     String writtenForm=name+"\n"+dueDate.toString()+"\n"+description;
     return writtenForm;
   }
   public String toStringMeta(){
-    String writtenForm="Task:"+name+"\n Due:"+dueDate.toString()+"\n Description:"+description+"\n Created:"+created.toString()+"\n Updated:"+lastUpdate.toString();
+    String writtenForm="Task\n"+name+"\n"+dueDate.toString()+"\n"+description+"\n"+created.toString()+"\n"+lastUpdate.toString();
     return writtenForm;
   }
 }
