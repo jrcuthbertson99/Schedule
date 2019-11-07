@@ -61,6 +61,12 @@ class Task {
   public boolean getCompletion(){
     return complete;
   }
+  public void setCreated(LocalDateTime createdDate){
+    created = createdDate;
+  }
+  public void setLastUpdate(LocalDateTime updated){
+    lastUpdate=updated;
+  }
   public String toString(){
     String writtenForm=name+"\n"+dueDate.toString()+"\n"+description;
     return writtenForm;
