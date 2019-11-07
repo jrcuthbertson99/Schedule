@@ -1,6 +1,7 @@
-import java.util.ArrayList;
 import java.io.*;
 import java.util.*;
+import java.text.*;
+import java.time.*;
 class Main{
   ArrayList<Project> myProjects;
   private ArrayList<String[]> loginInfo;
@@ -20,6 +21,7 @@ class Main{
         String[] currentLogin = new String[2];
         currentLogin[0]=li.next();
         currentLogin[1]=li.next();
+        loginInfo.add(currentLogin);
         i++;
       }
       li.close();
@@ -59,6 +61,47 @@ class Main{
    }
  }
  void loadProjects(String user){
+   try{
+     File file =new File(System.getProperty("user.dir")+File.separator+username);
+     if(file.exists()){
+       Scanner lp = new Scanner(file);
+       int p =-1;
+       int t = -1;
+       while(lp.hasNextLine()){
+         if(lp.next().equals("Project\n")){
+           p++;
+           t=-1;
+           String name = lp.nextLine();
+           String deadlineDate = lp.nextLine();
+           String description = lp.nextLine();
+           String createdDate = lp.nextLine();
+           String lastUpdatedDate = lp.nextLine();
+           LocalDate pulledDueDate = LocalDate.parse(deadlineDate);
+           LocalDateTime pulledCreatedDate = LocalDateTime.parse(createdDate);
+           LocalDateTime pulledUpdateDate = LocalDateTime.parse(deadlineDate);
+           myProjects.add(new Project(name,pulledDueDate,description));
+           myProjects.get(p).setCreated(pulledCreatedDate);
+           myProjects.get(p).setLastUpdate(pulledUpdateDate);
+         }
+         if (lp.next().equals("Task\n")){
+           t++;
+           String name = lp.nextLine();
+           String deadlineDate = lp.nextLine();
+           String description = lp.nextLine();
+           String createdDate = lp.nextLine();
+           String lastUpdatedDate = lp.nextLine();
+           LocalDate pulledDueDate = LocalDate.parse(deadlineDate);
+           LocalDateTime pulledCreatedDate = LocalDateTime.parse(createdDate);
+           LocalDateTime pulledUpdateDate =  LocalDateTime.parse(deadlineDate);
+           myProjects.get(p).steps.add(new Task(name, pulledDueDate, description, myProjects.get(p)));
+           myProjects.get(p).steps.get(t).setCreated(pulledCreatedDate);
+           myProjects.get(p).steps.get(t).setLastUpdate(pulledUpdateDate);
+         }
+       }
+     }
+   }catch(IOException e){
+       System.out.print("Error:"+ e);
+     }
    return;
  }
  void assign(String user, Task task){
