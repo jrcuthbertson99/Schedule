@@ -33,7 +33,7 @@ class Main{
       }
   }
   void createNewAccount(String userName, String password){
-    /*for(int i=0; i<loginInfo.size();i++){
+    for(int i=0; i<loginInfo.size();i++){
       if(userName.equals(loginInfo.get(i)[0])){
         System.out.print("Sorry, that username has been taken\n");
         return;
@@ -42,14 +42,8 @@ class Main{
         System.out.print("Sorry, that password has been taken\n");
         return;
       }
-    }*/
-    if(loginInfo.contains(userName)) {
-      System.out.print("Sorry, that username has been taken\n");
-      return; }
-    if(loginInfo.contains(password)) {
-      System.out.print("Sorry, that password has been taken\n");
-      return; }  
-    //System.out.println("here");
+    }
+    //test print to see if is recognizing duplicates fails
     String[] newLoginInfo = {userName,password};
     loginInfo.add(newLoginInfo);
     try{
