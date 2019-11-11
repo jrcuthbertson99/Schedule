@@ -31,12 +31,12 @@ class Main{
   }
   void createNewAccount(String userName, String password){
     for(int i=0; i<loginInfo.size();i++){
-      if(username.equals(loginInfo.get(i)[0])){
-        System.out.print("Sorry, that username has been taken");
+      if(userName.equals(loginInfo.get(i)[0])){
+        System.out.print("Sorry, that username has been taken\n");
         return;
       }
       if(password.equals(loginInfo.get(i)[1])){
-        System.out.print("Sorry, that password has been taken");
+        System.out.print("Sorry, that password has been taken\n");
         return;
       }
     }
@@ -68,7 +68,7 @@ class Main{
        int p =-1;
        int t = -1;
        while(lp.hasNextLine()){
-         if(lp.next().equals("Project\n")){
+         if(lp.hasNextLine() && lp.nextLine().equals("Project\n")){
            p++;
            t=-1;
            String name = lp.nextLine();
@@ -83,7 +83,7 @@ class Main{
            myProjects.get(p).setCreated(pulledCreatedDate);
            myProjects.get(p).setLastUpdate(pulledUpdateDate);
          }
-         if (lp.next().equals("Task\n")){
+         else if (lp.hasNextLine() && lp.nextLine().equals("Task\n")){
            t++;
            String name = lp.nextLine();
            String deadlineDate = lp.nextLine();
@@ -98,6 +98,7 @@ class Main{
            myProjects.get(p).steps.get(t).setLastUpdate(pulledUpdateDate);
          }
        }
+       lp.close();
      }
    }catch(IOException e){
        System.out.print("Error:"+ e);
