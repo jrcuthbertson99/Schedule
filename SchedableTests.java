@@ -7,6 +7,7 @@ public class SchedableTests {
    public static void main(String[] args) {
      Main firstRun =new Main();
      firstRun.createNewAccount("firstGuy","TestRun");
+     firstRun.createNewAccount("firstGuy","TestRun");
      firstRun.login("firstGuy", "TestRun");
     Project project= new Project("Project",LocalDate.of(2019, Month.NOVEMBER, 3) ,"Test");
     firstRun.myProjects.add(project);
@@ -40,8 +41,13 @@ public class SchedableTests {
 
    //System.out.printf("Project: %s\nDue: %s\nDescription: %s\n\n",project.getName(),project.getDueDate().toString(),project.getDescription());
    //System.out.printf("Task: \nDue: %s\nDescripiton: %s\n",first.getName(),first.getDueDate().toString(),first.getDescription());
-   System.out.printf(project.toString());
-   System.out.printf(project.toStringMeta());
+   //System.out.printf(project.toString());
+   //System.out.printf(project.toStringMeta());
    firstRun.logout();
+   Main secondRun= new Main();
+   secondRun.login("firstGuy","TestRun");
+   for(int i=0;i<secondRun.myProjects.size();i++){
+     System.out.printf(secondRun.myProjects.get(i).toStringMeta());
    }
+  }
 }
