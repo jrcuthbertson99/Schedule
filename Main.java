@@ -10,36 +10,75 @@ class Main{
   public Main(){
     this.myProjects = new ArrayList<Project>();
     this.loginInfo = new ArrayList<String[]>();
-    this.username = username;
-    this.password = password;
-    try{
-      File file = new File(System.getProperty("user.dir")+File.separator+"loginInfo");
-      file.createNewFile();
-      Scanner li = new Scanner(file);
-      int i=0;
-      while(li.hasNext()){
-        String[] currentLogin = new String[2];
-        currentLogin[0]=li.next();
-        currentLogin[1]=li.next();
-        loginInfo.add(currentLogin);
-        i++;
-      }
-      li.close();
+    
+    try{ // open the file if exists, or create it & save it string of user password
+         File file = new File(System.getProperty("user.dir")+File.separator+"loginInfo");    
+         if(!file.exists()) { //if doesnt exist create new file
+               file.createNewFile();
+            } 
+         else  { // already exists and need to open
+            Scanner fileScanner = new Scanner(file); 
+            ArrayList<String[]> loginInfo = new ArrayList<String[]>();
+            String[] currentLogin = new String[2];
+              while (fileScanner.hasNextLine())  {
+               currentLogin = fileScanner.nextLine().toString().split(" ");
+               //System.out.println(currentLogin[0]);
+               //System.out.println(currentLogin[1]);
+               loginInfo.add(currentLogin);
+            }
+            fileScanner.close(); 
+         }
     }catch(IOException e){
         System.out.print("Error:"+ e);
       }
   }
   void createNewAccount(String userName, String password){
+    /*for(int i=0; i<loginInfo.size();i++){
+      if(userName.equals(loginInfo.get(i)[0])){
+        System.out.print("Sorry, that username has been taken\n");
+        return;
+      }
+       if(password.equals(loginInfo.get(i)[1])){
+        System.out.print("Sorry, that password has been taken\n");
+        return;
+      }
+    }*/
+    if(loginInfo.contains(userName)) {
+      System.out.print("Sorry, that username has been taken\n");
+      return; }
+    if(loginInfo.contains(password)) {
+      System.out.print("Sorry, that password has been taken\n");
+      return; }  
+    //System.out.println("here");
+    String[] newLoginInfo = {userName,password};
+    loginInfo.add(newLoginInfo);
+    try{
+      File file = new File(System.getProperty("user.dir")+"loginInfo");
+      BufferedWriter writer = new BufferedWriter(new FileWriter(System.getProperty("user.dir")+File.separator+"loginInfo", true));
+      writer.write(newLoginInfo[0]+" "+newLoginInfo[1]+"\n");
+      writer.close();
+    }catch(IOException e){
+        System.out.print("Error:"+ e);
+      }
+  }
+  void createNewAccount(){
+    Scanner input = new Scanner(System.in);
+    System.out.println("Enter Username:");
+    String userName= input.nextLine();
     for(int i=0; i<loginInfo.size();i++){
-      if(username.equals(loginInfo.get(i)[0])){
-        System.out.print("Sorry, that username has been taken");
-        return;
-      }
-      if(password.equals(loginInfo.get(i)[1])){
-        System.out.print("Sorry, that password has been taken");
-        return;
-      }
-    }
+      if(userName.equals(loginInfo.get(i)[0])){ //find the username that already exists
+        while (userName.equals(loginInfo.get(i)[0])) {
+         System.out.print("Sorry, that username has been taken\n");
+         System.out.println("Enter Username : \n");
+         userName= input.nextLine();
+        }
+      } 
+    } 
+      System.out.println("Here");
+      System.out.println("Enter Password:");
+      String password = input.nextLine();
+      System.out.println("\nPassword is " + password+"\n");
+       
     String[] newLoginInfo = {userName,password};
     loginInfo.add(newLoginInfo);
     try{
@@ -56,6 +95,7 @@ class Main{
       if(userName.equals(loginInfo.get(i)[0]) && password.equals(loginInfo.get(i)[1])){
         username =userName;
         loadProjects(username);
+        System.out.println("Logged in\n");
         return;
       }
    }

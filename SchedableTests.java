@@ -4,11 +4,15 @@ import java.time.LocalDateTime;
 
 
 public class SchedableTests {
-   public static void main(String[] args) {
+   public static void main(String[] args)throws Exception {
+   
      Main firstRun =new Main();
-     firstRun.createNewAccount("firstGuy","TestRun");
-     firstRun.login("firstGuy", "TestRun");
-    Project project= new Project("Project",LocalDate.of(2019, Month.NOVEMBER, 3) ,"Test");
+      firstRun.createNewAccount("firstGuy","TestRun");
+      //firstRun.createNewAccount("firstGuy","TestRun");//testing to make sure cant do duplicates in same main run
+      //firstRun.login("firstGuy", "TestRun");
+      //firstRun.createNewAccount();
+      
+     Project project= new Project("Project",LocalDate.of(2019, Month.NOVEMBER, 3) ,"Test");
     firstRun.myProjects.add(project);
    project.setDueDate(LocalDate.of(2019, Month.NOVEMBER, 4));
    project.setName("ProjectTest");
