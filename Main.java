@@ -71,8 +71,7 @@ class Main{
      int t = -1;
      while(lp.hasNextLine()){
        String title = lp.nextLine();
-       System.out.print(title);
-       if(title.equals("Project"+System.lineSeparator())){
+       if(title.equals("Project")){
          p++;
          t=-1;
          String name = lp.nextLine();
@@ -82,22 +81,21 @@ class Main{
          String lastUpdatedDate = lp.nextLine();
          LocalDate pulledDueDate = LocalDate.parse(deadlineDate);
          LocalDateTime pulledCreatedDate = LocalDateTime.parse(createdDate);
-         LocalDateTime pulledUpdateDate = LocalDateTime.parse(deadlineDate);
+         LocalDateTime pulledUpdateDate = LocalDateTime.parse(lastUpdatedDate);
          myProjects.add(new Project(name,pulledDueDate,description));
          myProjects.get(p).setCreated(pulledCreatedDate);
          myProjects.get(p).setLastUpdate(pulledUpdateDate);
        }
-       else if (title.equals("Task"+System.lineSeparator())){
+       else if (title.equals("Task")){
          t++;
          String name = lp.nextLine();
-         System.out.print(name);
          String deadlineDate = lp.nextLine();
          String description = lp.nextLine();
          String createdDate = lp.nextLine();
          String lastUpdatedDate = lp.nextLine();
          LocalDate pulledDueDate = LocalDate.parse(deadlineDate);
          LocalDateTime pulledCreatedDate = LocalDateTime.parse(createdDate);
-         LocalDateTime pulledUpdateDate =  LocalDateTime.parse(deadlineDate);
+         LocalDateTime pulledUpdateDate =  LocalDateTime.parse(lastUpdatedDate);
          myProjects.get(p).steps.add(new Task(name, pulledDueDate, description, myProjects.get(p)));
          myProjects.get(p).steps.get(t).setCreated(pulledCreatedDate);
          myProjects.get(p).steps.get(t).setLastUpdate(pulledUpdateDate);
