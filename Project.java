@@ -63,7 +63,7 @@ class Project  {
     }
   }
   public String toString(){
-    String writtenForm=name+"\n"+dueDate.toString()+"\n"+description;
+    String writtenForm=name+System.lineSeparator()+dueDate.toString()+System.lineSeparator()+description;
     String writtenTasks="";
     for(int i=0; i<steps.size();i++){
       writtenTasks+=steps.get(i).toStringMeta()+"\n";
@@ -72,10 +72,10 @@ class Project  {
     return writtenForm;
   }
    public String toStringMeta(){
-    String writtenForm="Project"+name+"\n"+dueDate.toString()+"\n"+description+"\n"+created.toString()+"\n"+lastUpdate.toString();
+    String writtenForm="Project"+System.lineSeparator()+name+System.lineSeparator()+dueDate.toString()+System.lineSeparator()+description+System.lineSeparator()+created.toString()+System.lineSeparator()+lastUpdate.toString()+System.lineSeparator();
     String writtenTasks="";
     for(int i=0; i<steps.size();i++){
-      writtenTasks+=steps.get(i).toStringMeta()+"\n";
+      writtenTasks+=steps.get(i).toStringMeta();
     }
     writtenForm+="\n"+writtenTasks;
     return writtenForm;
