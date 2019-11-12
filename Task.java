@@ -68,11 +68,11 @@ class Task {
     lastUpdate=updated;
   }
   public String toString(){
-    String writtenForm=name+"\n"+dueDate.toString()+"\n"+description;
+    String writtenForm=name+System.lineSeparator()+dueDate.toString()+System.lineSeparator()+description;
     return writtenForm;
   }
   public String toStringMeta(){
-    String writtenForm="Task\n"+name+"\n"+dueDate.toString()+"\n"+description+"\n"+created.toString()+"\n"+lastUpdate.toString();
+    String writtenForm="Task"+System.lineSeparator()+name+System.lineSeparator()+dueDate.toString()+System.lineSeparator()+description+System.lineSeparator()+created.toString()+System.lineSeparator()+lastUpdate.toString()+System.lineSeparator();
     return writtenForm;
   }
 }
