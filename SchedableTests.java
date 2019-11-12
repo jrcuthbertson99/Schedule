@@ -6,8 +6,7 @@ import java.time.LocalDateTime;
 public class SchedableTests {
    public static void main(String[] args) {
      Main firstRun =new Main();
-     firstRun.createNewAccount("firstGuy","TestRun");
-     firstRun.createNewAccount("firstGuy","TestRun");
+      firstRun.createNewAccount("firstGuy", "TestRun");
      firstRun.login("firstGuy", "TestRun");
     Project project= new Project("Project",LocalDate.of(2019, Month.NOVEMBER, 3) ,"Test");
     firstRun.myProjects.add(project);
@@ -38,7 +37,9 @@ public class SchedableTests {
    if (project.steps.get(1).getCompletion()==false){
       System.out.print("Wym? We're done here.");
    }
-
+   for(int i=0;i<firstRun.myProjects.size();i++){
+     System.out.printf(firstRun.myProjects.get(i).toStringMeta());
+   }
    //System.out.printf("Project: %s\nDue: %s\nDescription: %s\n\n",project.getName(),project.getDueDate().toString(),project.getDescription());
    //System.out.printf("Task: \nDue: %s\nDescripiton: %s\n",first.getName(),first.getDueDate().toString(),first.getDescription());
    //System.out.printf(project.toString());
