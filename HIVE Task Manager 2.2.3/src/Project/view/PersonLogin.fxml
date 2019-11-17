@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="275.0" maxWidth="400" minHeight="275" minWidth="400" opacity="0.8" prefHeight="275.0" prefWidth="400.0" style="-fx-background-color: #221311;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text fontSmoothingType="LCD" layoutX="125.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hive Task Manager" textAlignment="CENTER" wrappingWidth="150.1328125">
+         <font>
+            <Font name="System Italic" size="16.0" />
+         </font>
+         <effect>
+            <Blend />
+         </effect>
+      </Text>
+      <AnchorPane layoutY="63.0" prefHeight="150.0" prefWidth="400.0" style="-fx-background-color: #a73628;" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="64.0">
+         <children>
+            <TextField layoutX="100.0" layoutY="14.0" prefHeight="32.0" prefWidth="200.0" promptText="Please input username">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <PasswordField layoutX="100.0" layoutY="52.0" prefHeight="32.0" prefWidth="200.0" promptText="Please input password">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </PasswordField>
+            <Button layoutX="100.0" layoutY="102.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="200.0" text="Login" textAlignment="CENTER" />
+            <Button layoutX="316.0" layoutY="21.0" mnemonicParsing="false" text="Register" textAlignment="CENTER" />
+         </children>
+      </AnchorPane>
+      <Button layoutX="250.0" layoutY="230.0" mnemonicParsing="false" text="Cancel" textAlignment="CENTER" AnchorPane.bottomAnchor="24.0" AnchorPane.rightAnchor="86.0" />
+   </children>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+</AnchorPane>
