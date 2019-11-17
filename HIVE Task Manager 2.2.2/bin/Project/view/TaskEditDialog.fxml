@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="250.0" maxWidth="300.0" minHeight="181.0" minWidth="300.0" prefHeight="181.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.view.TaskEditDialogController">
+   <children>
+      <GridPane layoutX="36.0" layoutY="33.0" prefHeight="79.0" prefWidth="228.0" AnchorPane.leftAnchor="36.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="36.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="109.0" minWidth="10.0" prefWidth="86.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="142.0" minWidth="10.0" prefWidth="142.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Task Name" GridPane.valignment="TOP" />
+            <Label text="Due Date" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+            <TextField fx:id="TaskNameField" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="TOP" />
+            <TextField fx:id="TaskDueDateField" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+         </children>
+      </GridPane>
+      <Button layoutX="150.0" layoutY="138.0" mnemonicParsing="false" onAction="#TaskHandleOk" prefHeight="23.0" prefWidth="55.0" text="OK" AnchorPane.rightAnchor="95.0" AnchorPane.topAnchor="138.0" />
+      <Button layoutX="220.0" layoutY="138.0" mnemonicParsing="false" onAction="#TaskHandleCancel" text="Cancel" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="138.0" />
+   </children>
+</AnchorPane>
