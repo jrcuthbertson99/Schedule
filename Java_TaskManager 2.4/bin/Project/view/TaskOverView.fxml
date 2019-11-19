@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="278.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.view.TaskController">
+   <children>
+      <TableView fx:id="taskTable" layoutX="18.0" layoutY="194.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="8.0">
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+         <columns>
+            <TableColumn fx:id="TaskNameColume" prefWidth="75.0" text="Task" />
+            <TableColumn fx:id="TaskDueDateColume" prefWidth="75.0" text="Due Date" />
+            <TableColumn fx:id="TaskStatusColume" prefWidth="75.0" text="Status" />
+         </columns>
+      </TableView>
+      <HBox alignment="CENTER_RIGHT" prefHeight="39.0" prefWidth="400.0" spacing="2.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#onNewTask" text="New Task" />
+            <Button mnemonicParsing="false" onAction="#onEditTask" text="Edit..." />
+            <Button mnemonicParsing="false" onAction="#onDeleteTask" text="Delete" />
+            <Button mnemonicParsing="false" onAction="#onSend" text="Send" />
+            <Button mnemonicParsing="false" onAction="#onComplete" text="Complete" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
