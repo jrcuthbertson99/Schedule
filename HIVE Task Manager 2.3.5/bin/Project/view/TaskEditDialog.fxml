@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="300.0" maxWidth="400.0" minHeight="300.0" minWidth="400.0" prefHeight="300.0" prefWidth="400.0" styleClass="background" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.view.TaskEditDialogController">
+   <children>
+      <GridPane layoutX="36.0" layoutY="33.0" AnchorPane.leftAnchor="36.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="36.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="1.7976931348623157E308" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Task Name" GridPane.valignment="TOP" />
+            <Label text="Due Date" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+            <TextField fx:id="TaskNameField" style="-fx-background-color: #aaaaaa;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin></TextField>
+            <TextField fx:id="TaskDueDateField" style="-fx-background-color: #aaaaaa;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin></TextField>
+         </children>
+      </GridPane>
+      <Button layoutX="150.0" layoutY="138.0" mnemonicParsing="false" onAction="#TaskHandleOk" text="OK" AnchorPane.rightAnchor="55.0" AnchorPane.topAnchor="240.0" />
+      <Button layoutX="220.0" layoutY="138.0" mnemonicParsing="false" onAction="#TaskHandleCancel" text="Cancel" AnchorPane.rightAnchor="155.0" AnchorPane.topAnchor="240.0" />
+   </children>
+</AnchorPane>

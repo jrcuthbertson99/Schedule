@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="548.0" prefWidth="484.0" styleClass="background" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.view.TaskController">
+   <children>
+      <TableView fx:id="TaskTable" layoutX="18.0" layoutY="194.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="8.0">
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+         <columns>
+            <TableColumn fx:id="TaskNameColume" minWidth="-1.0" prefWidth="-1.0" text="Task" />
+            <TableColumn fx:id="TaskDueDateColume" minWidth="-1.0" prefWidth="-1.0" text="Due Date" />
+         </columns>
+      </TableView>
+      <Button layoutX="132.0" layoutY="495.0" mnemonicParsing="false" onAction="#handleNewTask" text="New Task" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="250.0" />
+      <Button layoutX="264.0" layoutY="495.0" mnemonicParsing="false" onAction="#handleEditTask" text="Edit..." AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="135.0" />
+      <Button layoutX="257.0" layoutY="425.0" mnemonicParsing="false" onAction="#handleDeleteTask" text="Delete" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="15.0" />
+   </children>
+</AnchorPane>
