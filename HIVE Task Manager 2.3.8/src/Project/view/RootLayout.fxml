@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" styleClass="background" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.view.MenuController">
+   <top>
+      <MenuBar fx:id="RootMenuBar" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu fx:id="FileMenu" mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="CloseSelction" mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu fx:id="EditMenu" mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem fx:id="DeletSelection" mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu fx:id="HelpMenu" mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem fx:id="AboutSelection" mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+            <Menu fx:id="AccountMenu" mnemonicParsing="false" text="Account">
+              <items>
+                <MenuItem fx:id="LoginSelection" mnemonicParsing="false" onAction="#LoginSelectionEventHandler" text="Login" />
+                  <MenuItem fx:id="LogoutSelection" mnemonicParsing="false" onAction="#LogOutSelectionEventHandler" text="Logout" />
+                  <MenuItem fx:id="AccountDetialSelection" mnemonicParsing="false" text="Account Detail" visible="false" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <Region prefWidth="0.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <Region prefWidth="0.0" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <Region prefWidth="0.0" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>
